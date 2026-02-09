@@ -41,3 +41,23 @@ Creates a new transaction.
     "changedRows": 0
 }
 ```
+
+### PUT /api/transaction/id
+Edits an existing transaction.
+
+**Query Parameters:**
+- `amount` : Amount of the transation (positive or negative)
+- `description` : What the transaction is about
+
+**Response:**
+```json
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 0,
+    "info": "Rows matched: 1  Changed: 1  Warnings: 0",
+    "serverStatus": 2,
+    "warningStatus": 0,
+    "changedRows": 1
+}
+```

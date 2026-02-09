@@ -27,4 +27,17 @@ router.post('/transactions', (req, res) => {
   });
 });
 
+router.put('/transaction/:id', (req, res) => {
+    const { amount, description } = req.body;
+    const { id } = req.params;
+    db.query('UPDATE transactions SET amount = ?, description = ? WHERE id = ?', [amount, description, id], (err, results) => {
+
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.json(results);
+  });
+});
+
+
 module.exports = router;
