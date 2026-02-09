@@ -15,8 +15,7 @@ router.get('/transactions', (req, res) => {
   });
 });
 
-router.post('/transactions', (req, res) => {
-  console.log(req.body);
+router.post('/transaction', (req, res) => {
     const { amount, description } = req.body;
     db.query('INSERT INTO transactions (amount, description) VALUES (?, ?)', [amount, description], (err, results) => {
 

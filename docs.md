@@ -22,7 +22,7 @@ None
 ]
 ```
 
-### POST /api/transactions
+### POST /api/transaction
 Creates a new transaction.
 
 **Query Parameters:**
