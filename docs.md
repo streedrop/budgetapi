@@ -3,7 +3,7 @@
 ## Transactions
 
 ### GET /api/transactions
-Returns all transactions for a user.
+Returns all transactions.
 
 **Query Parameters:**
 
@@ -19,6 +19,24 @@ None
     "created_at": "2026-02-09T16:45:11.000Z"
   },
   ...
+]
+```
+### GET /api/transaction/:id
+Returns a specific transaction.
+
+**Query Parameters:**
+
+None
+
+**Response:**
+```json
+[
+    {
+        "id": 1,
+        "amount": "12.50",
+        "description": "Spending quite a lot of money",
+        "created_at": "2026-02-09T19:58:30.000Z"
+    }
 ]
 ```
 
@@ -42,7 +60,7 @@ Creates a new transaction.
 }
 ```
 
-### PUT /api/transaction/id
+### PUT /api/transaction/:id
 Edits an existing transaction.
 
 **Query Parameters:**

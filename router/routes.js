@@ -15,6 +15,16 @@ router.get('/transactions', (req, res) => {
   });
 });
 
+router.get('/transaction/:id', (req, res) => {
+    const { id } = req.params;
+    db.query('SELECT * FROM transactions WHERE id = ?', [id], (err, results) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.json(results);
+  });
+});
+
 router.post('/transaction', (req, res) => {
     const { amount, description } = req.body;
     db.query('INSERT INTO transactions (amount, description) VALUES (?, ?)', [amount, description], (err, results) => {
