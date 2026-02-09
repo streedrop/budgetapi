@@ -48,5 +48,15 @@ router.put('/transaction/:id', (req, res) => {
   });
 });
 
+router.delete('/transaction/:id', (req, res) => {
+    const { id } = req.params;
+    db.query('DELETE FROM transactions WHERE id = ?', [id], (err, results) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.json(results);
+  });
+});
+
 
 module.exports = router;

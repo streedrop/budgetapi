@@ -79,3 +79,23 @@ Edits an existing transaction.
     "changedRows": 1
 }
 ```
+
+### DELETE /api/transaction/:id
+Deletes an existing transaction.
+
+**Query Parameters:**
+
+None
+
+**Response:**
+```json
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 0,
+    "info": "",
+    "serverStatus": 2,
+    "warningStatus": 0,
+    "changedRows": 0
+}
+```
