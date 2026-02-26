@@ -104,3 +104,104 @@ None
     "changedRows": 0
 }
 ```
+
+## Categories
+
+### GET /api/categories
+Returns all categories.
+
+**Query Parameters:**
+
+None
+
+**Response:**
+```json
+[
+    {
+        "id": 1,
+        "name": "Salary",
+        "description": "My salary working at McDonald's",
+        "created_at": "2026-02-26T15:26:44.000Z"
+    },
+    ...
+]
+```
+### GET /api/categories/:id
+Returns a specific category.
+
+**Query Parameters:**
+
+None
+
+**Response:**
+```json
+[
+    {
+        "id": 1,
+        "name": "Salary",
+        "description": "My salary working at McDonald's",
+        "created_at": "2026-02-26T15:26:44.000Z"
+    }
+]
+```
+
+### POST /api/categories
+Creates a new category.
+
+**Query Parameters:**
+- `name` : Name for the category
+- `description` : More info about this specific category
+
+**Response:**
+```json
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": ...,
+    "info": "",
+    "serverStatus": 2,
+    "warningStatus": 0,
+    "changedRows": 0
+}
+```
+
+### PUT /api/categories/:id
+Edits an existing category.
+
+**Query Parameters:**
+- `name` : Name for the category
+- `description` : More info about this specific category
+
+
+**Response:**
+```json
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 0,
+    "info": "Rows matched: 1  Changed: 1  Warnings: 0",
+    "serverStatus": 2,
+    "warningStatus": 0,
+    "changedRows": 1
+}
+```
+
+### DELETE /api/categories/:id
+Deletes an existing category.
+
+**Query Parameters:**
+
+None
+
+**Response:**
+```json
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 0,
+    "info": "",
+    "serverStatus": 2,
+    "warningStatus": 0,
+    "changedRows": 0
+}
+```
