@@ -26,8 +26,8 @@ router.get('/transaction/:id', (req, res) => {
 });
 
 router.post('/transaction', (req, res) => {
-    const { amount, description } = req.body;
-    db.query('INSERT INTO transactions (amount, description) VALUES (?, ?)', [amount, description], (err, results) => {
+    const { amount, description, category_id } = req.body;
+    db.query('INSERT INTO transactions (amount, description, category_id) VALUES (?, ?, ?)', [amount, description, category_id], (err, results) => {
 
     if (err) {
       return res.status(500).json({ error: err.message });
@@ -37,9 +37,9 @@ router.post('/transaction', (req, res) => {
 });
 
 router.put('/transaction/:id', (req, res) => {
-    const { amount, description } = req.body;
+    const { amount, description, category_id } = req.body;
     const { id } = req.params;
-    db.query('UPDATE transactions SET amount = ?, description = ? WHERE id = ?', [amount, description, id], (err, results) => {
+    db.query('UPDATE transactions SET amount = ?, description = ?, category_id = ? WHERE id = ?', [amount, description, category_id, id], (err, results) => {
 
     if (err) {
       return res.status(500).json({ error: err.message });

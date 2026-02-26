@@ -16,6 +16,7 @@ None
     "id": 1,
     "amount": "3000.00",
     "description": "Monthly salary",
+    "category_id": 1,
     "created_at": "2026-02-09T16:45:11.000Z"
   },
   ...
@@ -35,6 +36,7 @@ None
         "id": 1,
         "amount": "12.50",
         "description": "Spending quite a lot of money",
+        "category_id": 1,
         "created_at": "2026-02-09T19:58:30.000Z"
     }
 ]
@@ -46,6 +48,7 @@ Creates a new transaction.
 **Query Parameters:**
 - `amount` : Amount of the transation (positive or negative)
 - `description` : What the transaction is about
+- `category_id` : The ID of the category to which the transaction is related
 
 **Response:**
 ```json
@@ -66,6 +69,8 @@ Edits an existing transaction.
 **Query Parameters:**
 - `amount` : Amount of the transation (positive or negative)
 - `description` : What the transaction is about
+- `category_id` : The ID of the category to which the transaction is related
+
 
 **Response:**
 ```json
