@@ -22,7 +22,7 @@ None
   ...
 ]
 ```
-### GET /api/transaction/:id
+### GET /api/transactions/:id
 Returns a specific transaction.
 
 **Query Parameters:**
@@ -42,7 +42,7 @@ None
 ]
 ```
 
-### POST /api/transaction
+### POST /api/transactions
 Creates a new transaction.
 
 **Query Parameters:**
@@ -63,7 +63,7 @@ Creates a new transaction.
 }
 ```
 
-### PUT /api/transaction/:id
+### PUT /api/transactions/:id
 Edits an existing transaction.
 
 **Query Parameters:**
@@ -85,7 +85,7 @@ Edits an existing transaction.
 }
 ```
 
-### DELETE /api/transaction/:id
+### DELETE /api/transactions/:id
 Deletes an existing transaction.
 
 **Query Parameters:**
