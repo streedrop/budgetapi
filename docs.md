@@ -17,6 +17,7 @@ None
     "amount": "3000.00",
     "description": "Monthly salary",
     "category_id": 1,
+    "date": "2026-01-01T05:00:00.000Z",
     "created_at": "2026-02-09T16:45:11.000Z",
     "category_name": "Salary"
   },
@@ -37,6 +38,7 @@ None
     "amount": "12.50",
     "description": "Spending quite a lot of money",
     "category_id": 1,
+    "date": "2026-01-01T05:00:00.000Z",
     "created_at": "2026-02-09T19:58:30.000Z",
     "category_name": "Salary"
 }
@@ -49,6 +51,7 @@ Creates a new transaction.
 - `amount` : Amount of the transation (positive or negative)
 - `description` : What the transaction is about
 - `category` : The ID of the category to which the transaction is related
+- `date` : The date at which the transaction took place
 
 **Response:**
 ```json
@@ -70,7 +73,7 @@ Edits an existing transaction.
 - `amount` : Amount of the transation (positive or negative)
 - `description` : What the transaction is about
 - `category` : The ID of the category to which the transaction is related
-
+- `date` : The date at which the transaction took place
 
 **Response:**
 ```json

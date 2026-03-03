@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS transactions (
   amount DECIMAL(10,2) NOT NULL,
   description VARCHAR(255) NOT NULL,
   category_id INT,
+  date DATE,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (category_id) REFERENCES categories(id)
 );
