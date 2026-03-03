@@ -17,7 +17,8 @@ None
     "amount": "3000.00",
     "description": "Monthly salary",
     "category_id": 1,
-    "created_at": "2026-02-09T16:45:11.000Z"
+    "created_at": "2026-02-09T16:45:11.000Z",
+    "category_name": "Salary"
   },
   ...
 ]
@@ -36,7 +37,8 @@ None
     "amount": "12.50",
     "description": "Spending quite a lot of money",
     "category_id": 1,
-    "created_at": "2026-02-09T19:58:30.000Z"
+    "created_at": "2026-02-09T19:58:30.000Z",
+    "category_name": "Salary"
 }
 ```
 
