@@ -31,15 +31,13 @@ None
 
 **Response:**
 ```json
-[
-    {
-        "id": 1,
-        "amount": "12.50",
-        "description": "Spending quite a lot of money",
-        "category_id": 1,
-        "created_at": "2026-02-09T19:58:30.000Z"
-    }
-]
+{
+    "id": 1,
+    "amount": "12.50",
+    "description": "Spending quite a lot of money",
+    "category_id": 1,
+    "created_at": "2026-02-09T19:58:30.000Z"
+}
 ```
 
 ### POST /api/transactions
@@ -48,7 +46,7 @@ Creates a new transaction.
 **Query Parameters:**
 - `amount` : Amount of the transation (positive or negative)
 - `description` : What the transaction is about
-- `category_id` : The ID of the category to which the transaction is related
+- `category` : The ID of the category to which the transaction is related
 
 **Response:**
 ```json
@@ -69,7 +67,7 @@ Edits an existing transaction.
 **Query Parameters:**
 - `amount` : Amount of the transation (positive or negative)
 - `description` : What the transaction is about
-- `category_id` : The ID of the category to which the transaction is related
+- `category` : The ID of the category to which the transaction is related
 
 
 **Response:**
@@ -135,14 +133,12 @@ None
 
 **Response:**
 ```json
-[
-    {
-        "id": 1,
-        "name": "Salary",
-        "description": "My salary working at McDonald's",
-        "created_at": "2026-02-26T15:26:44.000Z"
-    }
-]
+{
+    "id": 1,
+    "name": "Salary",
+    "description": "My salary working at McDonald's",
+    "created_at": "2026-02-26T15:26:44.000Z"
+}
 ```
 
 ### POST /api/categories
