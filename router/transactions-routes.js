@@ -74,4 +74,14 @@ router.delete('/:id', (req, res) => {
     });
 });
 
+router.delete('/category/:id', (req, res) => {
+    const { id } = req.params;
+    db.query('DELETE FROM transactions WHERE category_id = ?', [id], (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        res.json(results);
+    });
+});
+
 module.exports = router;
