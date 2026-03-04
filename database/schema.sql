@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS transactions (
   id INT PRIMARY KEY AUTO_INCREMENT,
   amount DECIMAL(10,2) NOT NULL,
   description VARCHAR(255) NOT NULL,
+  is_expense BOOLEAN NOT NULL,
   category_id INT,
   date DATE,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
