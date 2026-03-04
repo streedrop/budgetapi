@@ -44,6 +44,36 @@ None
 }
 ```
 
+### GET /api/transactions/category/:id
+Returns all transactions that match a specific category.
+
+**Query Parameters:**
+
+None
+
+**Response:**
+```json
+[
+  {
+    "id": 1,
+    "amount": "3000.00",
+    "description": "Monthly salary #1",
+    "category_id": 1,
+    "date": "2026-01-01T05:00:00.000Z",
+    "created_at": "2026-02-09T16:45:11.000Z",
+  },
+  {
+    "id": 4,
+    "amount": "3000.00",
+    "description": "Monthly salary #2",
+    "category_id": 1,
+    "date": "2026-01-15T05:00:00.000Z",
+    "created_at": "2026-02-09T16:45:11.000Z",
+  },
+  ...
+]
+```
+
 ### POST /api/transactions
 Creates a new transaction.
 

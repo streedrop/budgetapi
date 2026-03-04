@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
         SELECT t.*, c.name as category_name 
         FROM transactions t
         LEFT JOIN categories c on t.category_id = c.id
+        ORDER BY date DESC
         `, (err, results) => {
         if (err) {
             return res.status(500).json({ error: err.message });
@@ -27,6 +28,16 @@ router.get('/:id', (req, res) => {
         }
 
         res.json(results[0]);
+    });
+});
+
+router.get('/category/:id', (req, res) => {
+    const { id } = req.params;
+    db.query('SELECT * FROM transactions WHERE category_id = ? ORDER BY date DESC', [id], (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        res.json(results);
     });
 });
 
