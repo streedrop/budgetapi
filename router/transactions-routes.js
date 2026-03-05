@@ -4,7 +4,7 @@ const db = require('../database/connection');
 
 router.get('/', (req, res) => {
     db.query(`
-        SELECT t.*, c.name as category_name 
+        SELECT t.*, c.name as category_name, c.is_income
         FROM transactions t
         LEFT JOIN categories c on t.category_id = c.id
         ORDER BY date DESC
@@ -18,7 +18,12 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
     const { id } = req.params;
-    db.query('SELECT * FROM transactions WHERE id = ?', [id], (err, results) => {
+    db.query(`
+        SELECT t.*, c.name as category_name, c.is_income
+        FROM transactions t
+        LEFT JOIN categories c on t.category_id = c.id
+        WHERE id = ?
+        `, [id], (err, results) => {
         if (err) {
             return res.status(500).json({ error: err.message });
         }

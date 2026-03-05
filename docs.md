@@ -19,7 +19,8 @@ None
     "category_id": 1,
     "date": "2026-01-01T05:00:00.000Z",
     "created_at": "2026-02-09T16:45:11.000Z",
-    "category_name": "Salary"
+    "category_name": "Salary",
+    "is_income": 1
   },
   ...
 ]
@@ -40,7 +41,8 @@ None
     "category_id": 1,
     "date": "2026-01-01T05:00:00.000Z",
     "created_at": "2026-02-09T19:58:30.000Z",
-    "category_name": "Salary"
+    "category_name": "Salary",
+    "is_income": 1
 }
 ```
 
