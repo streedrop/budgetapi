@@ -27,8 +27,8 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const { name, description } = req.body;
-  db.query('INSERT INTO categories (name, description) VALUES (?, ?)', [name, description], (err, results) => {
+  const { name, description, is_income } = req.body;
+  db.query('INSERT INTO categories (name, description, is_income) VALUES (?, ?, ?)', [name, description, is_income], (err, results) => {
 
     if (err) {
       return res.status(500).json({ error: err.message });
@@ -38,9 +38,9 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  const { name, description } = req.body;
+  const { name, description, is_income } = req.body;
   const { id } = req.params;
-  db.query('UPDATE categories SET name = ?, description = ? WHERE id = ?', [name, description, id], (err, results) => {
+  db.query('UPDATE categories SET name = ?, description = ?, is_income = ? WHERE id = ?', [name, description, is_income, id], (err, results) => {
 
     if (err) {
       return res.status(500).json({ error: err.message });

@@ -16,7 +16,6 @@ None
     "id": 1,
     "amount": "3000.00",
     "description": "Monthly salary",
-    "is_expense": 0,
     "category_id": 1,
     "date": "2026-01-01T05:00:00.000Z",
     "created_at": "2026-02-09T16:45:11.000Z",
@@ -38,7 +37,6 @@ None
     "id": 1,
     "amount": "12.50",
     "description": "Spending quite a lot of money",
-    "is_expense": 1,
     "category_id": 1,
     "date": "2026-01-01T05:00:00.000Z",
     "created_at": "2026-02-09T19:58:30.000Z",
@@ -60,7 +58,6 @@ None
     "id": 1,
     "amount": "3000.00",
     "description": "Monthly salary #1",
-    "is_expense": 0,
     "category_id": 1,
     "date": "2026-01-01T05:00:00.000Z",
     "created_at": "2026-02-09T16:45:11.000Z",
@@ -69,7 +66,6 @@ None
     "id": 4,
     "amount": "3000.00",
     "description": "Monthly salary #2",
-    "is_expense": 0,
     "category_id": 1,
     "date": "2026-01-15T05:00:00.000Z",
     "created_at": "2026-02-09T16:45:11.000Z",
@@ -84,7 +80,6 @@ Creates a new transaction.
 **Query Parameters:**
 - `amount` : Amount of the transation (positive or negative)
 - `description` : What the transaction is about
-- `is_expense` : whether or not the transaction is an expense (revenue if not)
 - `category` : The ID of the category to which the transaction is related
 - `date` : The date at which the transaction took place
 
@@ -107,7 +102,6 @@ Edits an existing transaction.
 **Query Parameters:**
 - `amount` : Amount of the transation (positive or negative)
 - `description` : What the transaction is about
-- `is_expense` : whether or not the transaction is an expense (revenue if not)
 - `category` : The ID of the category to which the transaction is related
 - `date` : The date at which the transaction took place
 
@@ -180,6 +174,7 @@ None
         "id": 1,
         "name": "Salary",
         "description": "My salary working at McDonald's",
+        "is_income": 1,
         "created_at": "2026-02-26T15:26:44.000Z"
     },
     ...
@@ -198,6 +193,7 @@ None
     "id": 1,
     "name": "Salary",
     "description": "My salary working at McDonald's",
+    "is_income": 1,
     "created_at": "2026-02-26T15:26:44.000Z"
 }
 ```
@@ -208,6 +204,7 @@ Creates a new category.
 **Query Parameters:**
 - `name` : Name for the category
 - `description` : More info about this specific category
+- `is_income` : whether or not the category stores income transactions
 
 **Response:**
 ```json
@@ -228,7 +225,7 @@ Edits an existing category.
 **Query Parameters:**
 - `name` : Name for the category
 - `description` : More info about this specific category
-
+- `is_income` : whether or not the category stores income transactions
 
 **Response:**
 ```json
