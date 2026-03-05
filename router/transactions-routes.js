@@ -38,7 +38,13 @@ router.get('/:id', (req, res) => {
 
 router.get('/category/:id', (req, res) => {
     const { id } = req.params;
-    db.query('SELECT * FROM transactions WHERE category_id = ? ORDER BY date DESC', [id], (err, results) => {
+    db.query(`
+        SELECT t.*, c.is_income
+        FROM transactions t
+        LEFT JOIN categories c on t.category_id = c.id
+        WHERE t.category_id = ? 
+        ORDER BY date DESC
+        `, [id], (err, results) => {
         if (err) {
             return res.status(500).json({ error: err.message });
         }
