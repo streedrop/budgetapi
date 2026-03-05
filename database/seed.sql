@@ -1,11 +1,11 @@
 USE budgetapi;
 
-INSERT INTO categories (name, description, is_income) VALUES
-  ('Dev Salary', 'My salary during my internship', 1),
-  ('Ref Salary', 'My salary working as an improv referee', 1),
-  ('Rent', null, 0),
-  ('Restaurants', 'Bad food spendings', 0),
-  ('Groceries', 'Good food spendings', 0);
+INSERT INTO categories (name, description, is_income, goal) VALUES
+  ('Dev Salary', 'My salary during my internship', 1, 1500),
+  ('Ref Salary', 'My salary working as an improv referee', 1, 200),
+  ('Rent', null, 0, 1200),
+  ('Restaurants', 'Bad food spendings', 0, 200),
+  ('Groceries', 'Good food spendings', 0, 200);
 
 INSERT INTO transactions (amount, description, category_id, date) VALUES
   (21.23, 'O''Tacos', 4, '2025-02-03'),

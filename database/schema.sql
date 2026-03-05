@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS categories (
   name VARCHAR(50) NOT NULL,
   description VARCHAR(255) NULL,
   is_income BOOLEAN NOT NULL,
+  goal DECIMAL(10, 2),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

@@ -177,6 +177,7 @@ None
         "name": "Salary",
         "description": "My salary working at McDonald's",
         "is_income": 1,
+        "goal": 1500,
         "created_at": "2026-02-26T15:26:44.000Z"
     },
     ...
@@ -196,6 +197,7 @@ None
     "name": "Salary",
     "description": "My salary working at McDonald's",
     "is_income": 1,
+    "goal": 1500,
     "created_at": "2026-02-26T15:26:44.000Z"
 }
 ```
@@ -206,7 +208,8 @@ Creates a new category.
 **Query Parameters:**
 - `name` : Name for the category
 - `description` : More info about this specific category
-- `is_income` : whether or not the category stores income transactions
+- `is_income` : Whether or not the category stores income transactions
+- `goal` : How much you wish to earn/spend in this category in a month
 
 **Response:**
 ```json
@@ -227,7 +230,8 @@ Edits an existing category.
 **Query Parameters:**
 - `name` : Name for the category
 - `description` : More info about this specific category
-- `is_income` : whether or not the category stores income transactions
+- `is_income` : Whether or not the category stores income transactions
+- `goal` : How much you wish to earn/spend in this category in a month
 
 **Response:**
 ```json
