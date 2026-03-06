@@ -22,7 +22,7 @@ router.get('/:id', (req, res) => {
         SELECT t.*, c.name as category_name, c.is_income
         FROM transactions t
         LEFT JOIN categories c on t.category_id = c.id
-        WHERE id = ?
+        WHERE t.id = ?
         `, [id], (err, results) => {
         if (err) {
             return res.status(500).json({ error: err.message });
@@ -38,6 +38,23 @@ router.get('/:id', (req, res) => {
 
 router.get('/category/:id', (req, res) => {
     const { id } = req.params;
+
+    if (id == "null") {
+        db.query(`
+        SELECT *
+        FROM transactions
+        WHERE category_id IS null
+        ORDER BY date DESC
+        `, (err, results) => {
+            if (err) {
+                return res.status(500).json({ error: err.message });
+            }
+            res.json(results);
+        });
+
+        return;
+    }
+
     db.query(`
         SELECT t.*, c.is_income
         FROM transactions t
