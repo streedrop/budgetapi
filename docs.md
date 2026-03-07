@@ -47,7 +47,7 @@ None
 ```
 
 ### GET /api/transactions/category/:id
-Returns all transactions that match a specific category.
+Returns all transactions that match a specific category. The ID can be 'null' to get all uncategorized transactions.
 
 **Query Parameters:**
 
@@ -250,6 +250,68 @@ Edits an existing category.
 
 ### DELETE /api/categories/:id
 Deletes an existing category.
+
+**Query Parameters:**
+
+None
+
+**Response:**
+```json
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 0,
+    "info": "",
+    "serverStatus": 2,
+    "warningStatus": 0,
+    "changedRows": 0
+}
+```
+
+## Keywords
+
+### GET /api/keywords
+Returns all keywords.
+
+**Query Parameters:**
+
+None
+
+**Response:**
+```json
+[
+    {
+        "id": 1,
+        "keyword": "Salary",
+        "category_id": 1,
+        "created_at": "2026-02-26T15:26:44.000Z"
+    },
+    ...
+]
+```
+
+### POST /api/keywords
+Creates a new keyword.
+
+**Query Parameters:**
+- `keyword` : Keyword.
+- `category_id` : Category concerned by the keyword.
+
+**Response:**
+```json
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": ...,
+    "info": "",
+    "serverStatus": 2,
+    "warningStatus": 0,
+    "changedRows": 0
+}
+```
+
+### DELETE /api/keywords/:id
+Deletes an existing keyword.
 
 **Query Parameters:**
 

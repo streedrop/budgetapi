@@ -7,9 +7,11 @@ router.get('/', (req, res) => {
 
 const categoryRoutes = require('./categories-routes');
 const transactionRoutes = require('./transactions-routes');
+const keywordRoutes = require('./keywords-routes');
 
 router.use('/categories', categoryRoutes);
 router.use('/transactions', transactionRoutes);
+router.use('/keywords', keywordRoutes);
 
 
 module.exports = router;

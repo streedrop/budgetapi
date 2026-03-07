@@ -7,6 +7,9 @@ INSERT INTO categories (name, description, is_income, goal) VALUES
   ('Restaurants', 'Bad food spendings', 0, 200),
   ('Groceries', 'Good food spendings', 0, 200);
 
+INSERT INTO keywords (keyword, category_id) VALUES
+  ('Restaurant', 4);
+
 INSERT INTO transactions (amount, description, category_id, date) VALUES
   (21.23, 'O''Tacos', 4, '2026-02-03'),
   (19.78, 'Waverly', 4, '2026-02-03'),
