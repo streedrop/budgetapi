@@ -35,5 +35,5 @@ INSERT INTO transactions (amount, description, category_id, date) VALUES
   (17.07, 'Palace Doner', 4, '2026-02-28'),
   (387.4, 'Monthly rent', 3, '2026-02-02'),
   (189, 'Tournoi 2', 2, '2026-02-24'),
-  (788.43, 'Paie semaines 3-3', 1, '2026-02-03'),
+  (788.43, 'Paie semaines 2-3', 1, '2026-02-03'),
   (788.43, 'Paie semaines 4-5', 1, '2026-02-18');

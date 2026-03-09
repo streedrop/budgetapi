@@ -70,8 +70,8 @@ router.get('/category/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    const { amount, description, category, date } = req.body;
-    db.query('INSERT INTO transactions (amount, description, category_id, date) VALUES (?, ?, ?, ?)', [amount, description, category, date], (err, results) => {
+    const { amount, description, category_id, date } = req.body;
+    db.query('INSERT INTO transactions (amount, description, category_id, date) VALUES (?, ?, ?, ?)', [amount, description, category_id, date], (err, results) => {
 
         if (err) {
             return res.status(500).json({ error: err.message });
