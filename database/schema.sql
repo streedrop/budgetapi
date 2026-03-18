@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS budgetapi;
 CREATE DATABASE IF NOT EXISTS budgetapi;
 USE budgetapi;
 
@@ -25,6 +26,15 @@ CREATE TABLE IF NOT EXISTS keywords (
   keyword VARCHAR(50) NOT NULL,
   category_id INT NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+CREATE TABLE IF NOT EXISTS monthly_budget (
+  category_id INT NOT NULL,
+  month DATE NOT NULL,
+  amount DECIMAL(10,2) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (category_id, month),
   FOREIGN KEY (category_id) REFERENCES categories(id)
 );
 

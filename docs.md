@@ -9,6 +9,10 @@ Returns all transactions.
 
 None
 
+**Query Body:**
+
+None
+
 **Response:**
 ```json
 [
@@ -30,6 +34,10 @@ Returns a specific transaction.
 
 **Query Parameters:**
 
+- `id` : The ID of the transaction to retrieve.
+
+**Query Body:**
+
 None
 
 **Response:**
@@ -50,6 +58,10 @@ None
 Returns all transactions that match a specific category. The ID can be 'null' to get all uncategorized transactions.
 
 **Query Parameters:**
+
+- `id` : The ID of the category to retrieve its transactions.
+
+**Query Body:**
 
 None
 
@@ -82,6 +94,10 @@ None
 Creates a new transaction.
 
 **Query Parameters:**
+
+None
+
+**Query Body:**
 - `amount` : Amount of the transation (positive or negative)
 - `description` : What the transaction is about
 - `category` : The ID of the category to which the transaction is related
@@ -104,6 +120,10 @@ Creates a new transaction.
 Edits an existing transaction.
 
 **Query Parameters:**
+
+- `id` : The ID of the transaction to update.
+
+**Query Body:**
 - `amount` : Amount of the transation (positive or negative)
 - `description` : What the transaction is about
 - `category` : The ID of the category to which the transaction is related
@@ -127,6 +147,10 @@ Deletes an existing transaction.
 
 **Query Parameters:**
 
+- `id` : The ID of the transaction to delete.
+
+**Query Body:**
+
 None
 
 **Response:**
@@ -146,6 +170,10 @@ None
 Deletes all the transactions that have the passed ID as their category_id.
 
 **Query Parameters:**
+
+- `id` : The ID of the category to delete all of its transactions.
+
+**Query Body:**
 
 None
 
@@ -171,6 +199,10 @@ Returns all categories.
 
 None
 
+**Query Body:**
+
+None
+
 **Response:**
 ```json
 [
@@ -190,6 +222,10 @@ Returns a specific category.
 
 **Query Parameters:**
 
+- `id` : The ID of the category to retrieve.
+
+**Query Body:**
+
 None
 
 **Response:**
@@ -208,6 +244,10 @@ None
 Creates a new category.
 
 **Query Parameters:**
+
+None
+
+**Query Body:**
 - `name` : Name for the category
 - `description` : More info about this specific category
 - `is_income` : Whether or not the category stores income transactions
@@ -230,6 +270,10 @@ Creates a new category.
 Edits an existing category.
 
 **Query Parameters:**
+
+- `id` : The ID of the category to update.
+
+**Query Body:**
 - `name` : Name for the category
 - `description` : More info about this specific category
 - `is_income` : Whether or not the category stores income transactions
@@ -252,6 +296,10 @@ Edits an existing category.
 Deletes an existing category.
 
 **Query Parameters:**
+
+- `id` : The ID of the category to delete.
+
+**Query Body:**
 
 None
 
@@ -277,6 +325,10 @@ Returns all keywords.
 
 None
 
+**Query Body:**
+
+None
+
 **Response:**
 ```json
 [
@@ -294,6 +346,10 @@ None
 Creates a new keyword.
 
 **Query Parameters:**
+
+None
+
+**Query Body:**
 - `keyword` : Keyword.
 - `category_id` : Category concerned by the keyword.
 
@@ -314,6 +370,131 @@ Creates a new keyword.
 Deletes an existing keyword.
 
 **Query Parameters:**
+
+- `id` : The ID of the keyword to delete.
+
+**Query Body:**
+
+None
+
+**Response:**
+```json
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 0,
+    "info": "",
+    "serverStatus": 2,
+    "warningStatus": 0,
+    "changedRows": 0
+}
+```
+
+## Monthly budget
+
+### GET /api/budget
+Returns all monthly budget entries for a every category.
+
+**Query Parameters:**
+
+None
+
+**Query Body:**
+
+None
+
+**Response:**
+```json
+[
+    {
+        "category_id": 1,
+        "month": "2025-01-01T05:00:00.000Z",
+        "amount": "3.50",
+        "created_at": "2026-03-17T16:09:35.000Z"
+    },
+    ...
+]
+```
+
+### GET /api/budget/:id
+Returns all monthly budget entries for a given category ID.
+
+**Query Parameters:**
+
+- `id` : The ID of the category for which we want to retrieve all monthly budget entries.
+
+**Query Body:**
+
+None
+
+**Response:**
+```json
+[
+    {
+        "category_id": 1,
+        "month": "2025-01-01T05:00:00.000Z",
+        "amount": "3.50",
+        "created_at": "2026-03-17T16:09:35.000Z"
+    },
+    ...
+]
+```
+
+### GET /api/budget/:id/:month
+Returns the monthly budget for a given month of a given category.
+
+**Query Parameters:**
+
+- `id` : The ID of the category that the monthly budget entry relates to.
+- `month` : The month of the monthly budget entry to be fetched.
+
+**Query Body:**
+
+None
+
+**Response:**
+```json
+{
+    "category_id": 1,
+    "month": "2025-01-01T05:00:00.000Z",
+    "amount": "3.50",
+    "created_at": "2026-03-17T16:09:35.000Z"
+}
+```
+
+### PUT /api/budget/:id/:month
+Creates a new monthly budget entry for a given month of a given category, or updates it if it already exists.
+
+**Query Parameters:**
+
+- `id` : The ID of the category that the monthly budget entry relates to.
+- `month` : The month of the monthly budget entry to be upserted.
+
+**Query Body:**
+- `amount` : The new amount for the monthly budget.
+
+**Response:**
+```json
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": ...,
+    "info": "",
+    "serverStatus": 2,
+    "warningStatus": 0,
+    "changedRows": 0
+}
+```
+
+### DELETE /api/budget/:id/:month
+Deletes an existing monthly budget entry.
+
+**Query Parameters:**
+
+- `id` : The ID of the category that the monthly budget entry relates to.
+- `month` : The month of the monthly budget entry to be deleted.
+
+**Query Body:**
 
 None
 
