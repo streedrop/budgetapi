@@ -12,8 +12,8 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const { keyword, category_id } = req.body;
-  db.query('INSERT INTO keywords (keyword, category_id) VALUES (?, ?)', [keyword, category_id], (err, results) => {
+  const { source, keyword, action, category_id } = req.body;
+  db.query('INSERT INTO keywords (source, keyword, action, category_id) VALUES (?, ?, ?, ?)', [source, keyword, action, category_id], (err, results) => {
 
     if (err) {
       return res.status(500).json({ error: err.message });

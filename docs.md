@@ -300,7 +300,9 @@ None
 [
     {
         "id": 1,
+        "source": "description",
         "keyword": "Salary",
+        "action": "move",
         "category_id": 1
     },
     ...
@@ -315,8 +317,10 @@ Creates a new keyword.
 None
 
 **Query Body:**
+- `source` : 'description' or 'category': Where to look for the keyword.
 - `keyword` : Keyword.
-- `category_id` : Category concerned by the keyword.
+- `action` : 'move' or 'delete': What to do once the keyword is found.
+- `category_id` : If the action is 'move', ID of the category to move it to.
 
 **Response:**
 ```json

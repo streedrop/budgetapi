@@ -20,9 +20,12 @@ CREATE TABLE IF NOT EXISTS transactions (
 
 CREATE TABLE IF NOT EXISTS keywords (
   id INT PRIMARY KEY AUTO_INCREMENT,
+  source ENUM('description', 'category') NOT NULL,
   keyword VARCHAR(50) NOT NULL,
-  category_id INT NOT NULL,
+  action ENUM('move', 'ignore') NOT NULL,
+  category_id INT,
   FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE,
+  CHECK (action != 'move' OR category_id IS NOT NULL)
 );
 
 CREATE TABLE IF NOT EXISTS monthly_budget (
