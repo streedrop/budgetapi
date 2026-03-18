@@ -6,8 +6,7 @@ CREATE TABLE IF NOT EXISTS categories (
   id INT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(50) NOT NULL,
   description VARCHAR(255) NULL,
-  is_income BOOLEAN NOT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  is_income BOOLEAN NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS transactions (
@@ -16,7 +15,6 @@ CREATE TABLE IF NOT EXISTS transactions (
   description VARCHAR(255) NOT NULL,
   category_id INT,
   date DATE,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (category_id) REFERENCES categories(id)
 );
 
@@ -24,7 +22,6 @@ CREATE TABLE IF NOT EXISTS keywords (
   id INT PRIMARY KEY AUTO_INCREMENT,
   keyword VARCHAR(50) NOT NULL,
   category_id INT NOT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (category_id) REFERENCES categories(id)
 );
 
@@ -32,7 +29,6 @@ CREATE TABLE IF NOT EXISTS monthly_budget (
   category_id INT NOT NULL,
   month DATE NOT NULL,
   amount DECIMAL(10,2) NOT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (category_id, month),
   FOREIGN KEY (category_id) REFERENCES categories(id)
 );

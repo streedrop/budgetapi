@@ -22,7 +22,6 @@ None
     "description": "Monthly salary",
     "category_id": 1,
     "date": "2026-01-01T05:00:00.000Z",
-    "created_at": "2026-02-09T16:45:11.000Z",
     "category_name": "Salary",
     "is_income": 1
   },
@@ -48,7 +47,6 @@ None
     "description": "Spending quite a lot of money",
     "category_id": 1,
     "date": "2026-01-01T05:00:00.000Z",
-    "created_at": "2026-02-09T19:58:30.000Z",
     "category_name": "Salary",
     "is_income": 1
 }
@@ -74,7 +72,6 @@ None
     "description": "Monthly salary #1",
     "category_id": 1,
     "date": "2026-01-01T05:00:00.000Z",
-    "created_at": "2026-02-09T16:45:11.000Z",
     "is_income": 1
   },
   {
@@ -83,7 +80,6 @@ None
     "description": "Monthly salary #2",
     "category_id": 1,
     "date": "2026-01-15T05:00:00.000Z",
-    "created_at": "2026-02-09T16:45:11.000Z",
     "is_income": 1
   },
   ...
@@ -210,8 +206,7 @@ None
         "id": 1,
         "name": "Salary",
         "description": "My salary working at McDonald's",
-        "is_income": 1,
-        "created_at": "2026-02-26T15:26:44.000Z"
+        "is_income": 1
     },
     ...
 ]
@@ -233,8 +228,7 @@ None
     "id": 1,
     "name": "Salary",
     "description": "My salary working at McDonald's",
-    "is_income": 1,
-    "created_at": "2026-02-26T15:26:44.000Z"
+    "is_income": 1
 }
 ```
 
@@ -331,8 +325,7 @@ None
     {
         "id": 1,
         "keyword": "Salary",
-        "category_id": 1,
-        "created_at": "2026-02-26T15:26:44.000Z"
+        "category_id": 1
     },
     ...
 ]
@@ -405,8 +398,7 @@ None
     {
         "category_id": 1,
         "month": "2025-01-01T05:00:00.000Z",
-        "amount": "3.50",
-        "created_at": "2026-03-17T16:09:35.000Z"
+        "amount": "3.50"
     },
     ...
 ]
@@ -429,8 +421,7 @@ None
     {
         "category_id": 1,
         "month": "2025-01-01T05:00:00.000Z",
-        "amount": "3.50",
-        "created_at": "2026-03-17T16:09:35.000Z"
+        "amount": "3.50"
     },
     ...
 ]
@@ -453,8 +444,7 @@ None
 {
     "category_id": 1,
     "month": "2025-01-01T05:00:00.000Z",
-    "amount": "3.50",
-    "created_at": "2026-03-17T16:09:35.000Z"
+    "amount": "3.50"
 }
 ```
 
