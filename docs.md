@@ -162,30 +162,6 @@ None
 }
 ```
 
-### DELETE /api/transactions/category/:id
-Deletes all the transactions that have the passed ID as their category_id.
-
-**Query Parameters:**
-
-- `id` : The ID of the category to delete all of its transactions.
-
-**Query Body:**
-
-None
-
-**Response:**
-```json
-{
-    "fieldCount": 0,
-    "affectedRows": 4,
-    "insertId": 0,
-    "info": "",
-    "serverStatus": 2,
-    "warningStatus": 0,
-    "changedRows": 0
-}
-```
-
 ## Categories
 
 ### GET /api/categories
