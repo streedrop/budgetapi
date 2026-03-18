@@ -22,9 +22,9 @@ router.post('/', (req, res) => {
   });
 });
 
-router.delete('/:id', (req, res) => {
-  const { id } = req.params;
-  db.query('DELETE FROM keywords WHERE id = ?', [id], (err, results) => {
+router.delete('/:source/:keyword', (req, res) => {
+  const { source, keyword } = req.params;
+  db.query('DELETE FROM keywords WHERE source = ? AND keyword = ?', [source, keyword], (err, results) => {
     if (err) {
       return res.status(500).json({ error: err.message });
     }

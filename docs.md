@@ -299,7 +299,6 @@ None
 ```json
 [
     {
-        "id": 1,
         "source": "description",
         "keyword": "Salary",
         "action": "move",
@@ -335,12 +334,13 @@ None
 }
 ```
 
-### DELETE /api/keywords/:id
+### DELETE /api/keywords/:source/:keyword
 Deletes an existing keyword.
 
 **Query Parameters:**
 
-- `id` : The ID of the keyword to delete.
+- `source` : 'description' or 'category': Where to look for the keyword.
+- `keyword` : Keyword.
 
 **Query Body:**
 
