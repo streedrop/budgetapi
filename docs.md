@@ -182,7 +182,9 @@ None
         "id": 1,
         "name": "Salary",
         "description": "My salary working at McDonald's",
-        "is_income": 1
+        "is_income": 1,
+        "icon": 1,
+        "count": 4
     },
     ...
 ]
@@ -204,7 +206,8 @@ None
     "id": 1,
     "name": "Salary",
     "description": "My salary working at McDonald's",
-    "is_income": 1
+    "is_income": 1,
+    "icon": 1
 }
 ```
 
@@ -219,6 +222,7 @@ None
 - `name` : Name for the category
 - `description` : More info about this specific category
 - `is_income` : Whether or not the category stores income transactions
+- `icon` : The icon ID for this category
 
 **Response:**
 ```json
@@ -244,6 +248,7 @@ Edits an existing category.
 - `name` : Name for the category
 - `description` : More info about this specific category
 - `is_income` : Whether or not the category stores income transactions
+- `icon` : The icon ID for this category
 
 **Response:**
 ```json

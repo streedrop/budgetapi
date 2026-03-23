@@ -6,7 +6,8 @@ CREATE TABLE IF NOT EXISTS categories (
   id INT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(50) NOT NULL,
   description VARCHAR(255) NULL,
-  is_income BOOLEAN NOT NULL
+  is_income BOOLEAN NOT NULL,
+  icon INT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS transactions (

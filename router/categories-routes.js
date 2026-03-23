@@ -3,7 +3,19 @@ const router = express.Router();
 const db = require('../database/connection');
 
 router.get('/', (req, res) => {
-  db.query('SELECT * FROM categories', (err, results) => {
+  const all = `
+    SELECT c.*, COUNT(t.id) as count
+    FROM categories as c 
+    LEFT JOIN transactions as t ON c.id = t.category_id
+    GROUP BY c.id
+  `
+  const uncategorized = `
+    SELECT NULL as id, 'Uncategorized' as name, NULL as description, NULL as is_income, 0 as icon,
+    COUNT(*) FROM
+    (SELECT id FROM transactions WHERE category_id IS NULL)
+    as count
+  `
+  db.query(`${all} UNION ALL ${uncategorized}`, (err, results) => {
     if (err) {
       return res.status(500).json({ error: err.message });
     }
@@ -27,8 +39,8 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const { name, description, is_income } = req.body;
-  db.query('INSERT INTO categories (name, description, is_income) VALUES (?, ?, ?)', [name, description, is_income], (err, results) => {
+  const { name, description, is_income, icon } = req.body;
+  db.query('INSERT INTO categories (name, description, is_income, icon) VALUES (?, ?, ?, ?)', [name, description, is_income, icon], (err, results) => {
 
     if (err) {
       return res.status(500).json({ error: err.message });
@@ -38,9 +50,9 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  const { name, description, is_income } = req.body;
+  const { name, description, is_income, icon } = req.body;
   const { id } = req.params;
-  db.query('UPDATE categories SET name = ?, description = ?, is_income = ? WHERE id = ?', [name, description, is_income, id], (err, results) => {
+  db.query('UPDATE categories SET name = ?, description = ?, is_income = ?, icon = ? WHERE id = ?', [name, description, is_income, icon, id], (err, results) => {
 
     if (err) {
       return res.status(500).json({ error: err.message });
