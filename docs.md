@@ -96,7 +96,7 @@ None
 **Query Body:**
 - `amount` : Amount of the transation (positive or negative)
 - `description` : What the transaction is about
-- `category` : The ID of the category to which the transaction is related
+- `category_id` : The ID of the category to which the transaction is related
 - `date` : The date at which the transaction took place
 
 **Response:**
@@ -122,7 +122,7 @@ Edits an existing transaction.
 **Query Body:**
 - `amount` : Amount of the transation (positive or negative)
 - `description` : What the transaction is about
-- `category` : The ID of the category to which the transaction is related
+- `category_id` : The ID of the category to which the transaction is related
 - `date` : The date at which the transaction took place
 
 **Response:**

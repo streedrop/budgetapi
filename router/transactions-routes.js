@@ -81,9 +81,9 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    const { amount, description, category, date } = req.body;
+    const { amount, description, category_id, date } = req.body;
     const { id } = req.params;
-    db.query('UPDATE transactions SET amount = ?, description = ?, category_id = ?, date = ? WHERE id = ?', [amount, description, category, date, id], (err, results) => {
+    db.query('UPDATE transactions SET amount = ?, description = ?, category_id = ?, date = ? WHERE id = ?', [amount, description, category_id, date, id], (err, results) => {
 
         if (err) {
             return res.status(500).json({ error: err.message });
