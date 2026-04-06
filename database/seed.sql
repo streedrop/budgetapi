@@ -7,9 +7,10 @@ INSERT INTO categories (name, description, is_income, icon) VALUES
   ('Restaurants', 'Bad food spendings', 0, 0),
   ('Groceries', 'Good food spendings', 0, 0);
 
-INSERT INTO keywords (source, keyword, action, category_id) VALUES
-  ('category', 'Restaurant', 'move', 4),
-  ('description', 'PAIEMENT - MERCI', 'ignore', NULL);
+INSERT INTO keywords (source, match_type, keyword, action, category_id, new_name) VALUES
+  ('category', 'equals', 'Restaurant', 'move', 4, NULL),
+  ('description', 'equals', 'PAIEMENT - MERCI', 'ignore', NULL, NULL),
+  ('description', 'contains', 'METRO MARCHE MARCANIO', 'rename', NULL, 'Épicerie');
 
 INSERT INTO transactions (amount, description, category_id, date) VALUES
   (21.23, 'O''Tacos', 4, '2026-02-03'),

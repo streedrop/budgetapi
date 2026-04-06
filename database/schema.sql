@@ -21,12 +21,15 @@ CREATE TABLE IF NOT EXISTS transactions (
 
 CREATE TABLE IF NOT EXISTS keywords (
   source ENUM('description', 'category') NOT NULL,
+  match_type ENUM('contains', 'equals') NOT NULL,
   keyword VARCHAR(50) NOT NULL,
-  action ENUM('move', 'ignore') NOT NULL,
+  action ENUM('move', 'ignore', 'rename') NOT NULL,
   category_id INT,
+  new_name VARCHAR(255),
   PRIMARY KEY (source, keyword),
   FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE,
-  CHECK (action != 'move' OR category_id IS NOT NULL)
+  CHECK (action != 'move' OR category_id IS NOT NULL),
+  CHECK (action != 'rename' OR new_name IS NOT NULL)
 );
 
 CREATE TABLE IF NOT EXISTS monthly_budget (

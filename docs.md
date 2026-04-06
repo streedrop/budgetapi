@@ -305,9 +305,11 @@ None
 [
     {
         "source": "description",
+        "match_type": "equals",
         "keyword": "Salary",
         "action": "move",
-        "category_id": 1
+        "category_id": 1,
+        "new_name": null,
     },
     ...
 ]
@@ -322,9 +324,11 @@ None
 
 **Query Body:**
 - `source` : 'description' or 'category': Where to look for the keyword.
+- `condition` : 'contains' or 'equals': How should the keyword match the source.
 - `keyword` : Keyword.
-- `action` : 'move' or 'delete': What to do once the keyword is found.
+- `action` : 'move', 'ignore' or 'rename': What to do once the keyword is found.
 - `category_id` : If the action is 'move', ID of the category to move it to.
+- `new_name` : If the action is 'rename', new name for the transaction.
 
 **Response:**
 ```json
