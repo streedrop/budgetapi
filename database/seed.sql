@@ -7,7 +7,7 @@ INSERT INTO categories (name, description, is_income, icon) VALUES
   ('Restaurants', 'Bad food spendings', 0, 0),
   ('Groceries', 'Good food spendings', 0, 0);
 
-INSERT INTO keywords (source, match_type, keyword, action, category_id, new_name) VALUES
+INSERT INTO keywords (source, match_type, keyword, action, category_id, new_string) VALUES
   ('category', 'equals', 'Restaurant', 'move', 4, NULL),
   ('description', 'equals', 'PAIEMENT - MERCI', 'ignore', NULL, NULL),
   ('description', 'contains', 'METRO MARCHE MARCANIO', 'rename', NULL, 'Épicerie');

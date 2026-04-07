@@ -304,12 +304,13 @@ None
 ```json
 [
     {
+        "id": 1,
         "source": "description",
         "match_type": "equals",
         "keyword": "Salary",
         "action": "move",
         "category_id": 1,
-        "new_name": null,
+        "new_string": null,
     },
     ...
 ]
@@ -326,9 +327,9 @@ None
 - `source` : 'description' or 'category': Where to look for the keyword.
 - `condition` : 'contains' or 'equals': How should the keyword match the source.
 - `keyword` : Keyword.
-- `action` : 'move', 'ignore' or 'rename': What to do once the keyword is found.
+- `action` : 'move', 'ignore', 'rename' or 'replace': What to do once the keyword is found.
 - `category_id` : If the action is 'move', ID of the category to move it to.
-- `new_name` : If the action is 'rename', new name for the transaction.
+- `new_string` : If the action is 'rename', new name for the transaction.
 
 **Response:**
 ```json
@@ -343,13 +344,12 @@ None
 }
 ```
 
-### DELETE /api/keywords/:source/:keyword
+### DELETE /api/keywords/:id
 Deletes an existing keyword.
 
 **Query Parameters:**
 
-- `source` : 'description' or 'category': Where to look for the keyword.
-- `keyword` : Keyword.
+- `id` : The id matching the keyword.
 
 **Query Body:**
 
