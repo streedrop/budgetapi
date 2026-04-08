@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS rules (
   CHECK (action != 'rename' OR new_string IS NOT NULL)
 );
 
-CREATE TABLE IF NOT EXISTS monthly_budget (
+CREATE TABLE IF NOT EXISTS budget (
   category_id INT NOT NULL,
   month DATE NOT NULL,
   amount DECIMAL(10,2) NOT NULL,

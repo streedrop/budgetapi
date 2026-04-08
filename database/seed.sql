@@ -40,7 +40,7 @@ INSERT INTO transactions (amount, description, category_id, date) VALUES
   (788.43, 'Paie semaines 2-3', 1, '2026-02-03'),
   (788.43, 'Paie semaines 4-5', 1, '2026-02-18');
 
-INSERT INTO monthly_budget (category_id, month, amount) VALUES 
+INSERT INTO budget (category_id, month, amount) VALUES 
   (1, '2025-01-01', 1500.00),
   (1, '2025-02-01', 1500.00),
   (1, '2025-03-01', 1500.00),

@@ -16,9 +16,9 @@ router.get('/', (req, res) => {
     as count
   `
   db.query(`${all} UNION ALL ${uncategorized}`, (err, results) => {
-    if (err) {
-      return res.status(500).json({ error: err.message });
-    }
+
+    if (err) return res.status(500).json({ error: err.message });
+
     res.json(results);
   });
 });
@@ -26,13 +26,10 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   const { id } = req.params;
   db.query('SELECT * FROM categories WHERE id = ?', [id], (err, results) => {
-    if (err) {
-      return res.status(500).json({ error: err.message });
-    }
 
-    if (results.length === 0) {
-      return res.status(404).json({ error: "Category not found" });
-    }
+    if (err) return res.status(500).json({ error: err.message });
+
+    if (results.length === 0) return res.status(404).json({ error: "Category not found" });
 
     res.json(results[0]);
   });
@@ -42,9 +39,8 @@ router.post('/', (req, res) => {
   const { name, description, is_income, icon } = req.body;
   db.query('INSERT INTO categories (name, description, is_income, icon) VALUES (?, ?, ?, ?)', [name, description, is_income, icon], (err, results) => {
 
-    if (err) {
-      return res.status(500).json({ error: err.message });
-    }
+    if (err) return res.status(500).json({ error: err.message });
+
     res.json(results);
   });
 });
@@ -54,9 +50,10 @@ router.put('/:id', (req, res) => {
   const { id } = req.params;
   db.query('UPDATE categories SET name = ?, description = ?, is_income = ?, icon = ? WHERE id = ?', [name, description, is_income, icon, id], (err, results) => {
 
-    if (err) {
-      return res.status(500).json({ error: err.message });
-    }
+    if (err) return res.status(500).json({ error: err.message });
+
+    if (results.affectedRows === 0) return res.status(404).json({ error: "Category not found" });
+
     res.json(results);
   });
 });
@@ -64,9 +61,11 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
   const { id } = req.params;
   db.query('DELETE FROM categories WHERE id = ?', [id], (err, results) => {
-    if (err) {
-      return res.status(500).json({ error: err.message });
-    }
+
+    if (err) return res.status(500).json({ error: err.message });
+
+    if (results.affectedRows === 0) return res.status(404).json({ error: "Category not found" });
+
     res.json(results);
   });
 });

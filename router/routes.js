@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 const categoryRoutes = require('./categories-routes');
 const transactionRoutes = require('./transactions-routes');
 const ruleRoutes = require('./rules-routes');
-const budgetRoutes = require('./monthly-budget-routes');
+const budgetRoutes = require('./budget-routes');
 
 router.use('/categories', categoryRoutes);
 router.use('/transactions', transactionRoutes);
