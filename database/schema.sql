@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS transactions (
   FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS keywords (
+CREATE TABLE IF NOT EXISTS rules (
   id INT PRIMARY KEY AUTO_INCREMENT,
   source ENUM('description', 'category') NOT NULL,
   match_type ENUM('contains', 'equals') NOT NULL,

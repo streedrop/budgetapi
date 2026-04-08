@@ -287,10 +287,10 @@ None
 }
 ```
 
-## Keywords
+## Rules
 
-### GET /api/keywords
-Returns all keywords.
+### GET /api/rules
+Returns all rules.
 
 **Query Parameters:**
 
@@ -316,8 +316,8 @@ None
 ]
 ```
 
-### POST /api/keywords
-Creates a new keyword.
+### POST /api/rules
+Creates a new rule.
 
 **Query Parameters:**
 
@@ -344,12 +344,12 @@ None
 }
 ```
 
-### DELETE /api/keywords/:id
-Deletes an existing keyword.
+### DELETE /api/rules/:id
+Deletes an existing rule.
 
 **Query Parameters:**
 
-- `id` : The id matching the keyword.
+- `id` : The id matching the rule.
 
 **Query Body:**
 
