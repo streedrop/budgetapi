@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     GROUP BY c.id
   `
   const uncategorized = `
-    SELECT NULL as id, 'Uncategorized' as name, NULL as description, NULL as is_income, 0 as icon,
+    SELECT NULL as id, 'categories.uncategorized' as name, NULL as description, NULL as is_income, 0 as icon,
     COUNT(*) FROM
     (SELECT id FROM transactions WHERE category_id IS NULL)
     as count
