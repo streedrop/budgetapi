@@ -19,6 +19,9 @@ router.get('/', (req, res) => {
 
     if (err) return res.status(500).json({ error: err.message });
 
+    // Return the uncategorized category only if it has transactions
+    results = results.filter(c => c.is_income != null || c.count != 0)
+
     res.json(results);
   });
 });
