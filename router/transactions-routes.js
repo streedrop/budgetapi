@@ -53,7 +53,7 @@ router.get('/category/:id', (req, res) => {
     }
 
     db.query(`
-        SELECT t.*, c.is_income
+        SELECT t.*, c.is_income, c.name as category_name
         FROM transactions t
         LEFT JOIN categories c on t.category_id = c.id
         WHERE t.category_id = ? 
