@@ -4,7 +4,7 @@ USE budgetapi;
 
 CREATE TABLE IF NOT EXISTS categories (
   id INT PRIMARY KEY AUTO_INCREMENT,
-  name VARCHAR(50) NOT NULL,
+  name VARCHAR(50) NOT NULL UNIQUE,
   description VARCHAR(255) NULL,
   is_income BOOLEAN NOT NULL,
   icon INT NOT NULL
